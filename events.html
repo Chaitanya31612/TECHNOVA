@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <!-- Begin Head -->
+    <head>
+        <!-- Basic -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>EVENTS|TECHNOVA</title>
+      
+
+        <!-- Web Fonts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i|Montserrat:400,700" rel="stylesheet">
+
+        <!-- Vendor Styles -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/themify/themify.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/scrollbar/scrollbar.min.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/swiper/swiper.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Theme Styles -->
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/global/global.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- Theme Skins -->
+        <link href="css/theme/red.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
+    </head>
+    <!-- End Head -->
+    <style>
+        body {
+       width: 100vw;
+       background-color: #1D1D1D;
+       margin: 0;
+       font-family: helvetica;
+    }
+    
+    .about {
+       $cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
+       $transition: 0.6s $cubic;
+       $size: 40px;
+       position: fixed;
+       z-index: 10;
+       bottom: 10px;
+       right: 10px;
+       width: $size;
+       height: $size;
+       display: flex;
+       justify-content: flex-end;
+       align-items: flex-end;
+       transition: all 0.2s ease;
+    
+       .bg_links {
+          width: $size;
+          height: $size;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(#fff, 0.2);
+          border-radius: 100%;
+          backdrop-filter: blur(5px);
+          position: absolute;
+       }
+    
+       .logo {
+          width: $size;
+          height: $size;
+          z-index: 9;
+          
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: 10px 7px;
+          opacity: 0.9;
+          transition: all 1s 0.2s ease;
+          bottom: 0;
+          right: 0;
+       }
+    
+       .social {
+          opacity: 0;
+          right: 0;
+          bottom: 0;
+    
+          .icon {
+             width: 100%;
+             height: 100%;
+             background-size: 20px;
+             background-repeat: no-repeat;
+             background-position: center;
+             background-color: transparent;
+             display: flex;
+             transition: all 0.2s ease, background-color 0.4s ease;
+             opacity: 0;
+             border-radius: 100%;
+          }
+    
+          
+       }
+    
+       &:hover {
+          width: 105px;
+          height: 105px;
+          transition: all $transition;
+    
+          .logo {
+             opacity: 1;
+             transition: all 0.6s ease;
+          }
+    
+          .social {
+             opacity: 1;
+    
+             .icon {
+                opacity: 0.9;
+             }
+    
+             &:hover {
+                background-size: 28px;
+                .icon {
+                   background-size: 65%;
+                   opacity: 1;
+                }
+             }
+    
+             &.portfolio {
+                right: 0;
+                bottom: calc(100% - 40px);
+                transition: all 0.3s 0s $cubic;
+                .icon {
+                   &:hover {
+                      background-color: #698fb7;
+                   }
+                }
+             }
+    
+             &.dribbble {
+                bottom: 45%;
+                right: 45%;
+                transition: all 0.3s 0.15s $cubic;
+                .icon {
+                   &:hover {
+                      background-color: #ea4c89;
+                   }
+                }
+             }
+    
+             &.linkedin {
+                bottom: 0;
+                right: calc(100% - 40px);
+                transition: all 0.3s 0.25s $cubic;
+                .icon {
+                   &:hover {
+                      background-color: #0077b5;
+                   }
+                }
+             }
+          }
+       }
+    }
+    
+    .wrapper {
+       width: 100vw;
+       margin: 0 auto;
+       height: 400px;
+       background-color: #161616;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       position: relative;
+       transition: all 0.3s ease;
+    }
+    
+    @media screen and (max-width: 767px) {
+       .wrapper {
+          height: 700px;
+       }
+    }
+    
+    .content {
+       max-width: 1024px;
+       width: 100%;
+       padding: 0 4%;
+       padding-top: 250px;
+       margin: 0 auto;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    
+    @media screen and (max-width: 767px) {
+       .content {
+          padding-top: 300px;
+          flex-direction: column;
+       }
+    }
+    
+    .card {
+       width: 100%;
+       max-width: 300px;
+       min-width: 200px;
+       height: 250px;
+       background-color: #292929;
+       margin: 10px;
+       border-radius: 10px;
+       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+       border: 2px solid rgba(7, 7, 7, 0.12);
+       font-size: 16px;   
+       transition: all 0.3s ease;
+       position: relative;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       cursor: pointer;
+       transition: all 0.3s ease;
+    }
+    
+    .icon {
+       margin: 0 auto;
+       width: 100%;
+       height: 80px;
+       max-width:80px;
+       background: linear-gradient(90deg, #FF7E7E 0%, #FF4848 40%, rgba(0, 0, 0, 0.28) 60%);
+       border-radius: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       color: white;
+       transition: all 0.8s ease;
+       background-position: 0px;
+       background-size: 200px;
+    }
+    
+    .material-icons.md-18 { font-size: 18px; }
+    .material-icons.md-24 { font-size: 24px; }
+    .material-icons.md-36 { font-size: 36px; }
+    .material-icons.md-48 { font-size: 48px; }
+    
+    .card .title {
+       width: 100%;
+       margin: 0;
+       text-align: center;
+       margin-top: 30px;
+       color: white;
+       font-weight: 600;
+       text-transform: uppercase;
+       letter-spacing: 4px;
+    }
+    
+    .card .text {
+       width: 80%;
+       margin: 0 auto;
+       font-size: 13px;
+       text-align: center;
+       margin-top: 20px;
+       color: white;
+       font-weight: 200;
+       letter-spacing: 2px;
+       opacity: 0;
+       max-height:0;
+       transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      
+       height: 270px;
+    }
+    
+    .card:hover .info {
+       height: 90%;
+    }
+    
+    .card:hover .text {
+       transition: all 0.3s ease;
+       opacity: 1;
+       max-height:40px;
+    }
+    
+    .card:hover .icon {
+       background-position: -120px;
+       transition: all 0.3s ease;
+    }
+    
+    .card:hover .icon i {
+       background: linear-gradient(90deg, #FF7E7E, #FF4848);
+       -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+       opacity: 1;
+       transition: all 0.3s ease;
+    }</style>
+    <!-- Body -->
+    <body>
+
+        <!--========== HEADER ==========-->
+        <header class="navbar-fixed-top s-header js__header-sticky js__header-overlay">
+            <!-- Navbar -->
+            <div class="s-header__navbar">
+                <div class="s-header__container">
+                    <div class="s-header__navbar-row">
+                        <div class="s-header__navbar-row-col">
+                            <!-- Logo -->
+                            <div class="s-header__logo">
+                                <a href="index.html" class="s-header__logo-link">
+                                    <img class="s-header__logo-img s-header__logo-img-default" src="img/logo1.jpeg" style="width: 70px; height: 70px;" >
+                                    <img class="s-header__logo-img s-header__logo-img-shrink" src="img/logo1.jpeg" style="width: 70px; height: 70px;" >
+                                </a>
+                            </div>
+                            <!-- End Logo -->
+                        </div>
+                        <div class="s-header__navbar-row-col">
+                            <!-- Trigger -->
+                            <a href="javascript:void(0);" class="s-header__trigger js__trigger">
+                                <span class="s-header__trigger-icon"></span>
+                                <svg x="0rem" y="0rem" width="3.125rem" height="3.125rem" viewbox="0 0 54 54">
+                                    <circle fill="transparent" stroke="#fff" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+                                </svg>
+                            </a>
+                            <!-- End Trigger -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+
+            <!-- Overlay -->
+            <div class="s-header-bg-overlay js__bg-overlay">
+                <!-- Nav -->
+                <nav class="s-header__nav js__scrollbar">
+                    <div class="container-fluid">
+                        <!-- Menu List -->                                
+                        
+                        <!-- End Menu List -->
+
+                        <!-- Menu List -->                                
+                        <ul class="list-unstyled s-header__nav-menu">
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="index.html#about">About</a></li>
+                            
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="index.html#gallery">Gallery</a></li>
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="index.html#contacts1">Contacts</a></li>
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="login.html">Register</a></li>
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="login2.html">Login</a></li>
+                           
+                        </ul>
+                        <!-- End Menu List -->
+                    </div>
+                </nav>
+                <!-- End Nav -->
+                
+                <!-- Action -->
+              
+
+                <!-- Action -->
+                <ul class="list-inline s-header__action s-header__action--rb">
+                    <li class="s-header__action-item">
+                        <a class="s-header__action-link" href="#">
+                            <i class="g-padding-r-5--xs ti-facebook"></i>
+                            <span class="g-display-none--xs g-display-inline-block--sm">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="s-header__action-item">
+                        <a class="s-header__action-link" href="#">
+                            <i class="g-padding-r-5--xs ti-twitter"></i>
+                            <span class="g-display-none--xs g-display-inline-block--sm">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="s-header__action-item">
+                        <a class="s-header__action-link" href="#">
+                            <i class="g-padding-r-5--xs ti-instagram"></i>
+                            <span class="g-display-none--xs g-display-inline-block--sm">Instagram</span>
+                        </a>
+                    </li>
+                  
+                </ul>
+                <!-- End Action -->
+            </div>
+            <!-- End Overlay -->
+        </header>
+        <!--========== END HEADER ==========-->
+
+        <!--========== PROMO BLOCK ==========-->
+        <div class="s-promo-block-v3 g-bg-position--center g-fullheight--sm" style="background: url('img/1920x1080/17.jpg');">
+            <div class="container g-ver-center--sm g-padding-y-125--xs g-padding-y-0--sm">
+                <div class="g-margin-t-30--xs g-margin-t-0--sm g-margin-b-30--xs g-margin-b-70--md">
+                    <h1 class="g-font-size-35--xs g-font-size-45--sm g-font-size-50--lg g-color--white">TECHNOVA<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Events</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-4 g-margin-b-50--xs g-margin-b-0--md">
+                        <div class="s-promo-block-v3__divider g-display-none--xs g-display-block--md"></div>
+                        <div class="row">
+                            <div class="col-sm-6 g-margin-b-30--xs g-margin-b-0--md">
+                                
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1">
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                                            <span class="s-promo-block-v3__date g-font-size-100--xs g-font-size-135--lg g-font-weight--300 g-color--primary">2</span>
+                                        </div>
+                                    </div>
+                                    <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
+                                        <span class="s-promo-block-v3__month g-font-size-18--xs g-font-size-22--lg g-font-weight--400 g-color--white" >April</span>
+                                        <span class="s-promo-block-v3__year g-font-size-18--xs g-font-size-22--lg g-font-weight--400 g-color--white">2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!--========== END PROMO BLOCK ==========-->
+
+        <!--========== PAGE CONTENT ==========-->
+      
+        <!-- End Features -->
+
+        <!-- Upcoming Event -->
+        
+        <!-- End Upcoming Event -->
+
+        <!-- Speakers -->
+       <!-- about -->
+<div class="about">
+    <a class="bg_links social portfolio"  target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links social dribbble"  target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links social linkedin"  target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links logo"></a>
+ </div>
+ <!-- end about -->
+ <br>
+ <br><h1 style="text-align: center; color: white;">Departmental Events</h1>
+    <div class="content" style="padding-top:0px;">
+       <!-- card -->
+       <div class="card">
+          
+        <!-- <img class="s-header__logo-img s-header__logo-img-default" src="img/logo1.jpeg" style="width: 70px; height: 70px;" > -->
+        
+        <p class="title">Computer Science</p>
+             
+             <p style="color:#A9A9A9" class="text">
+                 <a href="event1.html">-Euler Code</a> <br>
+                 <a href="event2.html">-Programmer Of The Year</a> <br>
+                 <a href="events3.html">-LAN Gaming</a><br><br>
+                 
+                </p>
+                
+             <!-- <ul class="text">
+                 <li style="color:#A9A9A9;list-style:none;">Programmer Of The Year</li>
+                 <li style="color:#A9A9A9;list-style:none;">Euler Code</li>
+                 <li style="color:#A9A9A9;list-style:none;">LAN Gaming</li>
+             </ul> -->
+            
+       </div>
+       <!-- end card -->
+       <!-- card -->
+       <div class="card">
+          
+             <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+             <p class="title">Mechanical</p>
+             <p style="color:#A9A9A9" class="text">
+                -Mechanical Hunt <br>
+                -Mechanical Quiz <br>
+                -PUBG
+                <br><br>
+                 
+               </p>
+          
+       </div>
+       <!-- end card -->
+       <!-- card -->
+       <div class="card">
+          
+             <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+             <p class="title">Electrical</p>
+             <p style="color:#A9A9A9" class="text">
+                -Circuit War<br>
+                -Machine Mantra<br>
+                -Technical IQ
+                <br><br>
+                 
+               </p>
+          
+       </div>
+       <!-- end card -->
+    </div>
+
+ </div>
+<!-- copyhere -->
+ <div class="content" style="padding-top:0px;">
+    <!-- card -->
+    <div class="card">
+       
+          <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+          <p class="title">Biotechnology</p>
+          <p style="color:#A9A9A9" class="text">
+            -Biotechnology-Buzz <br>
+            -BIO-QUIZ <br>
+            -BIO-HUNT
+            <br><br>
+                 
+           </p>
+       
+    </div>
+    <!-- end card -->
+    <!-- card -->
+    <div class="card">
+       
+          <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+          <p class="title">Biomedical</p>
+          <p style="color:#A9A9A9" class="text">
+            -Poster/Model Presentation <br>
+            -B-Quiz <br>
+            -Dream project Presentation
+            <br><br>
+                 
+           </p>
+       
+    </div>
+    <!-- end card -->
+    <!-- card -->
+    <div class="card">
+       
+          <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+          <p class="title">Architecture</p>
+          <p style="color:#A9A9A9" class="text">
+            -Archaquest <br>
+            -Dope a Soap <br>
+            -Mini Capture
+            <br><br>
+                 
+           </p>
+       
+    </div>
+    <!-- end card -->
+    <div class="card">
+       
+        <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+        <p class="title">Civil</p>
+        <p style="color:#A9A9A9" class="text">
+            -Civi-Q <br>
+            -Primametry <br>
+            -Palace of Cards
+            <br><br>
+                 
+           </p>
+     
+  </div>
+ 
+
+ 
+ </div>
+
+
+ 
+ <div class="content" style="padding-top:0px;">
+    <!-- card -->
+    <div class="card">
+       
+          <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+          <p class="title">Physics</p>
+          <p style="color:#A9A9A9" class="text">
+            -Physics Treasure Hunt <br>
+            <br><br>
+                 
+           </p>
+       
+    </div>
+    <!-- end card -->
+    <!-- card -->
+    <div class="card">
+       
+          <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+          <p class="title">ECE</p>
+          <p style="color:#A9A9A9" class="text">
+            -Battle of Breadboards<br>
+            -General Electronics Quiz <br>
+            -Technical Paper Presentation
+            <br><br>
+                 
+           </p>
+       
+    </div>
+    <!-- end card -->
+    <!-- card -->
+    <div class="card">
+       
+          <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+          <p class="title">Management Studies</p>
+          <p style="color:#A9A9A9" class="text">
+            -Plan B<br>
+            -Action to Auction <br>
+            -Inceptia
+            <br><br>
+                 
+           </p>
+       
+    </div>
+    <!-- end card -->
+    <div class="card">
+       
+        <!-- <div class="icon"><i class="material-icons md-36"></i></div> -->
+        <p class="title">Chemical</p>
+        <p style="color:#A9A9A9" class="text">
+            -Chemi-Tree<br>
+            -Chem-fluence <br>
+            -Chem-Clave
+            <br><br>
+                 
+           </p>
+     
+  </div>
+ 
+
+ 
+ </div>
+</div><br>
+
+ <br><h1 style="text-align: center; color: white;">Society Events</h1>
+    <div class="content" style="padding-top:0px;">
+       <!-- card -->
+       <div class="card">
+          
+          
+             <p class="title">LISOC</p>
+             <p style="color:#A9A9A9" class="text">
+                -Student of The Year <br>
+                -Mind Athalon
+                <br><br>
+                 
+             </p>
+          
+       </div>
+      
+       <div class="card">
+          
+             
+             <p class="title">Code It</p>
+             <p style="color:#A9A9A9" class="text">
+                -Coding Duet <br>
+                -Webpage Battle
+                <br><br>
+                 
+             </p>
+          
+       </div>
+       
+       <div class="card">
+          
+             
+             <p class="title">Savera</p>
+             <p style="color:#A9A9A9" class="text">
+                -Technico Gospeler <br>
+                -Tech Track the Technicality
+                <br><br>
+                 
+             </p>
+          
+       </div>
+    
+    
+    </div>
+    <div class="content" style="padding-top:0px;">
+        <!-- card -->
+        <div class="card">
+           
+           
+              <p class="title">SANJHI<p style="color:#A9A9A9" class="text">
+                -Comic Kaun?<br>
+                -Medium Mixer
+                <br><br>
+                 
+             </p>
+           
+        </div>
+       
+        <div class="card">
+           
+              
+              <p class="title">Ingenious Coders</p>
+              <p style="color:#A9A9A9" class="text">
+                -Who is the PUBG king<br>
+                -Awarelancer
+                <br><br>
+                 
+             </p>
+           
+        </div>
+        
+        <div class="card">
+           
+              
+              <p class="title">Thinkbots</p>
+              <p style="color:#A9A9A9" class="text">
+                -Robo Soccer <br>
+                -Line Following Robot
+                <br><br>
+                 
+             </p>
+           
+        </div>
+     
+     
+     </div>
+     <div class="content" style="padding-top:0px;">
+        <!-- card -->
+        <div class="card">
+           
+           
+              <p class="title">NCC</p>
+              <p style="color:#A9A9A9" class="text">
+                -DCRUST ROADIE 
+                <br><br>
+                 
+             </p>
+           
+        </div>
+       
+        <div class="card">
+           
+              
+              <p class="title">Sunshine</p>
+              <p style="color:#A9A9A9" class="text">
+                -DCRUST GOT TALENT <br>
+                -DCRUST Parliament
+                <br><br>
+                 
+             </p>
+           
+        </div>
+        
+        <div class="card">
+           
+              
+            <p class="title">IIC</p>
+            <p style="color:#A9A9A9" class="text">
+              -Ideathon <br>
+              -Mock Interview
+              <br><br>
+                 
+           </p>
+         
+      </div>
+     </div><br><br>
+
+<!-- copyendhere -->
+
+ 
+
+
+        <!-- Clients -->
+        
+        <!-- End Clients -->
+        <!--========== END PAGE CONTENT ==========-->
+
+        <!--========== FOOTER ==========-->
+        <footer class="g-bg-color--dark">
+            <!-- Links -->
+            <div class="g-hor-divider__dashed--white-opacity-lightest" style="text-align: center;">
+                <div class="container g-padding-y-80--xs">
+                    <div class="row">
+                       
+                        <div class="col-sm-2 g-margin-b-20--xs g-margin-b-0--md">
+                            <ul class="list-unstyled g-ul-li-tb-5--xs g-margin-b-0--xs">
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="#">Twitter</a></li>
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="#">Facebook</a></li>
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="#">Instagram</a></li>
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="#">YouTube</a></li>
+                            </ul>
+                        </div>
+                      
+                        
+                            <h3 class="g-font-size-18--xs g-color--white" id="contacts" >MAIL US AT</h3>
+                            <p class="g-color--white-opacity" >DCRUSTTECHNOVA@DCRUST.ORG</p>
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- End Links -->
+
+            <!-- Copyright -->
+            <div class="container g-padding-y-50--xs"style="text-align: center;">
+                <div class="row" style="text-align: center;">
+                    <div class="col-xs-6" style="text-align: center;">
+                        <h1 style="color: lightgray; text-align: center;" >TECHNOVA</h1>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- End Copyright -->
+        </footer>
+        <!--========== END FOOTER ==========-->
+
+        <!-- Back To Top -->
+        <a href="javascript:void(0);" class="s-back-to-top js__back-to-top"></a>
+
+        <!--========== JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) ==========-->
+        <!-- Vendor -->
+        <script type="text/javascript" src="vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.migrate.min.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.smooth-scroll.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.back-to-top.min.js"></script>
+        <script type="text/javascript" src="vendor/scrollbar/jquery.scrollbar.min.js"></script>
+        <script type="text/javascript" src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="vendor/swiper/swiper.jquery.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.parallax.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.wow.min.js"></script>
+
+        <!-- General Components and Settings -->
+        <script type="text/javascript" src="js/global.min.js"></script>
+        <script type="text/javascript" src="js/components/header-sticky.min.js"></script>
+        <script type="text/javascript" src="js/components/scrollbar.min.js"></script>
+        <script type="text/javascript" src="js/components/magnific-popup.min.js"></script>
+        <script type="text/javascript" src="js/components/swiper.min.js"></script>
+        <script type="text/javascript" src="js/components/parallax.min.js"></script>
+        <script type="text/javascript" src="js/components/wow.min.js"></script>
+        <!--========== END JAVASCRIPTS ==========-->
+
+        <div id="id01" class="modal" >
+          
+           
+                            <form class="center-block s-promo-block-v2__form g-width-100-percent--xs g-width-400--sm g-bg-color--dark-light g-padding-x-50--xs g-padding-y-80--xs g-radius--4" action="#" method="post">
+                                <div class="g-text-center--xs g-margin-b-40--xs">
+                                    <h2 class="g-font-size-30--xs g-color--white">Login</h2>
+                                </div>
+                               
+                                <div class="g-margin-b-40--xs">
+                                    <input type="email" class="form-control s-form-v3__input" id="email" placeholder="* Email" required>
+                                </div>
+                                <div class="g-margin-b-40--xs">
+                                    <input type="password" class="form-control s-form-v3__input" id="psw" placeholder="* Password" required>
+                                </div>
+                                <div class="g-text-center--xs">
+                                    <button type="submit" class="text-uppercase btn-block s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-50--xs g-margin-b-20--xs">submit >></button>
+                                </div>
+                                <h4 class="g-font-size-15--xs g-color--white" style="text-align: center;">OR</h4>
+                                <div class="g-text-center--xs">
+                                    <button type="button" class="text-uppercase btn-block s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-50--xs g-margin-b-20--xs"   onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">close >></button>
+                                </div>
+                            </form>
+                       </div>
+                       
+        
+        <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+
+    </body>
+    <!-- End Body -->
+</html>
